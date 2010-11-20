@@ -1,3 +1,5 @@
+/* See license.txt for terms of usage */
+
 var Pr0n_Modules = [
      { name        : 'share',
        icon        : 'chrome://pr0n/content/modules/share/images/icon.png',

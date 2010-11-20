@@ -1,3 +1,5 @@
+/* See license.txt for terms of usage */
+
 // This object manages any window:
 function Pr0n_Window(obj, win, config) {
     this.init(obj, win, config);

@@ -1,3 +1,5 @@
+/* See license.txt for terms of usage */
+
 // CONSTANTS //
 const PR0N_HOME_URL       = 'http://www.wepr0n.com';
 const PR0N_CONTRIBUTE_URL = 'http://www.wepr0n.com'; // TODO

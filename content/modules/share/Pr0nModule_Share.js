@@ -1,3 +1,5 @@
+/* See license.txt for terms of usage */
+
 var Pr0nModule_Share = {
     _config   : null,
     _JSON     : null,

@@ -1,3 +1,5 @@
+/* See license.txt for terms of usage */
+
 function Pr0n_preferenceSave() {
     var pr0n = Components.classes["@wepr0n.com/pr0n;1"]
                          .getService().wrappedJSObject;

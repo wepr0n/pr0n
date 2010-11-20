@@ -1,3 +1,5 @@
+/* See license.txt for terms of usage */
+
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 // Gecko 1.9.0/1.9.1 compatibility - add XPCOMUtils.defineLazyServiceGetter

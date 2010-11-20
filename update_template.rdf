@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <RDF:Description about="urn:mozilla:extension:pr0n@wepr0n.com">
+    <em:updates>
+      <RDF:Seq>
+
+        <RDF:li>
+          <RDF:Description>
+            <em:version>0.7</em:version>
+
+            <em:targetApplication>
+              <RDF:Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>3.5</em:minVersion>
+                <em:maxVersion>4.*</em:maxVersion>
+
+                <em:updateLink>http://www.wepr0n.com/xpi/pr0n-0.7.xpi</em:updateLink>
+                <em:updateHash>sha1:5410bf7e703b52548ce493caf9328c6cbba80004</em:updateHash>
+
+                <em:updateInfoURL>http://www.wepr0n.com/xpi/update.xhtml</em:updateInfoURL>
+              </RDF:Description>
+            </em:targetApplication>
+          </RDF:Description>
+        </RDF:li>
+
+      </RDF:Seq>
+    </em:updates>
+
+    <em:signature/>
+  </RDF:Description>
+</RDF:RDF>

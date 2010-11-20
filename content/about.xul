@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window class="dialog"
+    title="Pr0n - About"
+    orient="vertical"
+    autostretch="always"
+    onload="Pr0n_aboutUpdate(); sizeToContent();"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script src="Pr0n.js" />
+
+    <groupbox align="center" orient="horizontal">
+        <vbox>
+            <spring flex="1"/>
+            <image src="chrome://pr0n/skin/icon.png"/>
+            <spring flex="1"/>
+
+            <text value="Version:" style="font-weight: bold;"/>
+            <text id="Pr0n-version" value="" />
+            <separator class="thin"/>
+
+            <text value="Website:" style="font-weight:bold; "/>
+            <text id="Pr0n-website" value="" />
+            <separator class="thin"/>
+        </vbox>
+
+        <vbox>
+            <text value="License:" style="font-weight: bold;"/>
+
+<text id="Pr0n-copyright" value="" />
+<separator class="thin"/>
+<text value="Redistribution and use in source and binary forms, with or without" />
+<text value="modification, are permitted provided that the following conditions are met:" />
+<text value="    * Redistributions of source code must retain the above copyright" />
+<text value="      notice, this list of conditions and the following disclaimer." />
+<text value="    * Redistributions in binary form must reproduce the above copyright" />
+<text value="      notice, this list of conditions and the following disclaimer in the" />
+<text value="      documentation and/or other materials provided with the distribution." />
+<text value="    * Neither the name of the WePr0n Project nor the" />
+<text value="      names of its contributors may be used to endorse or promote products" />
+<text value="      derived from this software without specific prior written permission." />
+<separator class="thin"/>
+<text value="THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND" />
+<text value="ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED" />
+<text value="WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE" />
+<text value="DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY" />
+<text value="DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES" />
+<text value="(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;" />
+<text value="LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND" />
+<text value="ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT" />
+<text value="(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS" />
+<text value="SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
+
+        </vbox>
+
+    </groupbox>
+
+    <hbox>
+        <spacer flex="1"/>
+         <button label="Close" oncommand="window.close();"/>
+    </hbox>
+
+</window>

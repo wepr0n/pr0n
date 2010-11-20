@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://pr0n/skin/main.css" type="text/css"?>
+
+<overlay id="Pr0n-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script src="Pr0n.js"/>
+
+    <toolbarpalette id="BrowserToolbarPalette">
+        <toolbarbutton id="pr0n-toolbarbutton"
+                       insertbefore="print-button"
+                       class="toolbarbutton-1 chromeclass-toolbar-additional"
+                       tooltiptext="Show pr0n toolbar"
+                       label="Pr0n"
+                       image="chrome://pr0n/content/images/logo.png"
+                       orient="horizontal"
+                       oncommand="Pr0n_open();" />
+    </toolbarpalette>
+
+    <toolbox id="navigator-toolbox">
+
+        <toolbar id="Pr0n-Toolbar" toolbarname="Pr0n Toolbar" accesskey="P"
+                 class="chromeclass-toolbar" context="toolbar-context-menu"
+                 hidden="false" persist="hidden">
+
+            <toolbaritem id="Pr0n-Logo">
+                <toolbarbutton id="Pr0n-Home" tooltiptext="Pr0n!"
+                               image="chrome://pr0n/content/images/logo.png"
+                               oncommand="Pr0n_home();" />
+
+                <toolbarseparator />
+            </toolbaritem>
+
+            <toolbaritem id="Pr0n-Modules">
+            </toolbaritem>
+
+            <spacer flex="100%"/>
+
+            <toolbaritem flex="0">
+                <toolbarbutton id="Pr0n-Preferences" tooltiptext="Preferences"
+                               image="chrome://pr0n/content/images/preferences.png"
+                               oncommand="Pr0n_preferences();" />
+
+                <toolbarbutton id="Pr0n-Contribute" tooltiptext="Contribute!"
+                               image="chrome://pr0n/content/images/contribute.png"
+                               oncommand="Pr0n_contribute();" />
+
+                <toolbarseparator />
+
+                <toolbarbutton id="Pr0n-Exit" tooltiptext="Exit NOW!"
+                               image="chrome://pr0n/content/images/exit.png"
+                               oncommand="Pr0n_exit();" />
+            </toolbaritem>
+
+        </toolbar>
+    </toolbox>
+
+</overlay>

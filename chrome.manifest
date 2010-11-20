@@ -1,0 +1,17 @@
+content	pr0n	content/
+skin	pr0n	classic/1.0	skin/
+
+overlay	chrome://browser/content/browser.xul	chrome://pr0n/content/main.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+
+# Component registration
+component {e6dbb66f-5d17-4135-a991-1e73bd01802d} components/tagAutoComplete.js
+contract @mozilla.org/autocomplete/search;1?name=pr0n-tags-autocomplete {e6dbb66f-5d17-4135-a991-1e73bd01802d}
+category profile-after-change @mozilla.org/autocomplete/search;1?name=pr0n-tags-autocomplete @mozilla.org/autocomplete/search;1?name=pr0n-tags-autocomplete
+
+component {d01956c1-55a7-4c99-91a3-37501865c1f6} components/Pr0n.js
+contract @wepr0n.com/pr0nStartup;1 {d01956c1-55a7-4c99-91a3-37501865c1f6}
+category profile-after-change @wepr0n.com/pr0nStartup;1 @wepr0n.com/pr0nStartup;1
+
+component {6951e739-9936-44eb-84ea-be5ac59b7e59} components/Pr0n.js
+contract @wepr0n.com/pr0n;1 {6951e739-9936-44eb-84ea-be5ac59b7e59}
+category profile-after-change @wepr0n.com/pr0n;1 @wepr0n.com/pr0n;1

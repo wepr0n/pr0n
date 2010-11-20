@@ -1,0 +1,112 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#pr0n-toolbarbutton {
+    list-style-image: url("chrome://pr0n/content/images/logo.png");
+}
+
+#Pr0n-Preferences {
+}
+
+#Pr0n-Contribute {
+}
+
+#Pr0n-Exit {
+}
+
+#Pr0n-Splitter {
+}
+
+/* Hide the value column of the tag autocomplete popup
+ * leaving only the comment column visible. This is
+ * so that only the tag being edited is shown in the
+ * popup.
+ */
+#pr0n-share-tags #treecolAutoCompleteValue {
+  visibility: collapse;
+}
+
+#pr0n-open-tags #treecolAutoCompleteValue {
+  visibility: collapse;
+}
+
+#Pr0n-Toolbar {
+    -moz-appearance:none!important;
+    background:-moz-linear-gradient(top, #eb008a, #a1003c);
+    padding:0;
+    margin:0;
+}
+
+/* panel styles: dez sucks elettrico shit */
+.pr0n-panel {
+    -moz-appearance:none!important;
+    padding:10px;
+    border-top:1px solid #666;
+    border-bottom:1px solid #fff;
+    background:0;
+    color:#fff;
+    margin:5px 0 0 -5px;
+    border:1px solid #fff;
+    background: #a1003c;
+}
+
+
+.pr0n-panel-title {
+    -moz-appearance:none!important;
+    font-size:18px;
+}
+
+.pr0n-label {
+    color:#fff;
+    padding:5px;
+}
+
+#Pr0n-Toolbar-ShareOpenMenu {
+        width: 24px;
+}
+
+.pr0n-button {
+    -moz-appearance:none!important;
+    -moz-border-radius:5px;
+    border:1px solid #999;
+    background:0;
+    color:#fff;
+    padding:5px;
+}
+
+.pr0n-button:hover {
+    -moz-border-radius:5px;
+    border:1px solid #999;
+    background:0;
+    color:#fff;
+    padding:5px;
+}
+
+.pr0n-toolbar-button {
+    -moz-appearance:none!important;
+    border:0px;
+    background:0;
+    color:#fff;
+}
+
+.pr0n-toolbar-button:hover {
+    -moz-appearance:none!important;
+    border:0px;
+    background:0;
+    color:#000;
+}
+
+.pr0n-input-text {
+    -moz-appearance:none!important;
+    border:1px solid #eb008a;
+    color:#9f003a;
+    padding:2px;
+}
+
+.pr0n-input-text:focus {
+    border:1px solid #9f003a;
+    color:#eb008a;
+}
+
+#pr0n-share-rate {
+    width: 80px;
+}

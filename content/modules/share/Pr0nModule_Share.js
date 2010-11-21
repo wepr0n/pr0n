@@ -1265,7 +1265,7 @@ var Pr0nModule_Share = {
         var me = this;
         browser.addEventListener("focus", function(evnt) { me.windowFocus(browser, evnt); }, true);
         browser.addEventListener("blur",  function(evnt) { me.windowBlur(browser, evnt); }, true);
-        this._windows.push({ win: browser, url: null, time: 0, tags: null });
+        this._windows.push({ win: browser, url: null, time: 0, tags: null, rate: null });
     },
 
     windowFocus : function(win, evnt) {

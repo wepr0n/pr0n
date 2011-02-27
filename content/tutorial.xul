@@ -6,7 +6,7 @@
   title="Pr0n"
   orient="vertical"
   autostretch="always"
-  onload="sizeToContent();Pr0nTutorialImages();"
+  onload="sizeToContent();Pr0nTutorialLoad();"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
   <script src="Pr0nTutorial.js"/>

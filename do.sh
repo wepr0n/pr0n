@@ -16,8 +16,14 @@ if [ "$?" != 0 ]; then
 fi
 echo "done."
 
-echo -n "Creating archive: "
-git archive master --format zip > TMP/"pr0n-$VERSION.xpi"
+if [ "$1" = "" ]; then
+   BRANCH=master
+else
+   BRANCH=$1
+fi
+
+echo -n "Creating archive ($BRANCH): "
+git archive $BRANCH --format zip > TMP/"pr0n-$VERSION.xpi"
 if [ "$?" != 0 ]; then
     echo 'Error creating the archive.'
     exit 1

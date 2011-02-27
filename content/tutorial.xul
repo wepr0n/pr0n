@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://pr0n/skin/main.css" type="text/css"?>
+
+<wizard
+  title="Pr0n"
+  orient="vertical"
+  autostretch="always"
+  onload="sizeToContent();Pr0nTutorialImages();"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="Pr0nTutorial.js"/>
+
+  <wizardpage label="The Pr0n Tutorial" description="Introduction page">
+    <hbox id="Pr0n-Tutorial-Header">
+      <text value="Thanks to have chosen Pr0n!" style="font-weight: bold; font-size: x-large;" flex="1"/>
+      <image src="chrome://pr0n/content/images/logo.png" />
+    </hbox>
+
+    <separator flex="1"/>
+
+    <description>
+Pr0n is pretty easy to use, though we want you to be confident with this tool.
+So you can forget about this and dig for great porn content. 
+    </description>
+
+    <separator/>
+
+    <description>
+Just follow this easy tutorial, and it will explain all pr0n secrets to you!
+    </description>
+
+    <separator flex="1"/>
+
+  </wizardpage>
+
+  <wizardpage label="The Pr0n Tutorial" description="How to activate pr0n">
+
+    <description>
+you can activate pr0n by clicking on this icon on Mozilla Firefox toolbar, or enabling the private browsing feature of Firefox.
+    </description>
+
+    <separator flex="1"/>
+
+    <hbox>
+        <label flex="1" />
+        <image id="pr0n-tutorial-toolbar" />
+        <label flex="1" />
+    </hbox>
+
+    <separator flex="1"/>
+
+    <description>
+We care for your privacy, so if you don't want anybody know that you're a proud pr0n user, click here and the icon will disappear forever. You will always be able to use the shortcut to enter into pr0n's world anytime.
+    </description>
+
+    <checkbox id="pr0n-normal-browsing-enabled" label="Hide pr0n icon from the toolbar" onclick="pr0nShownNormalBrowsingMode();"/>
+
+  </wizardpage>
+
+  <wizardpage label="The Pr0n Tutorial" description="How pr0n works: private mode always!">
+
+    <description>
+        Pr0n, quando attivato attiva il private-mode del browser: niente di cio' dei siti che visiterai,
+        niente della tua history, nulla sara' memorizzato. Per maggiori informazioni sul private browsing mode,
+        leggi <label href="http://support.mozilla.com/en-US/kb/private browsing" class="text-link" value="qui" />.
+    </description>
+
+    <separator flex="1"/>
+
+    <hbox>
+        <label flex="1" />
+        <image src="chrome://pr0n/content/images/tutorial/bar.png" />
+        <label flex="1" />
+    </hbox>
+
+    <separator flex="1"/>
+
+    <description>
+       Pr0n mostra la sua toolbar che da accesso a tutte le sue feature. Questa barra scompare quando si esce
+       dal private browsing mode o cliccando sull'icona di pr0n, o cliccando sull'ultima icona della toolbar.
+    </description>
+
+  </wizardpage>
+
+  <wizardpage label="The Pr0n Tutorial" description="How pr0n works: features">
+
+    <groupbox orient="vertical">
+      <grid class="indent" flex="1">
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+
+        <rows>
+
+          <row>
+            <vbox>
+              <label flex="1" />
+              <image src="chrome://pr0n/content/images/tutorial/share.png" />
+              <label flex="1" />
+            </vbox>
+
+            <description>
+              Cliccando su questa icona puoi condividere e taggare siti, pagine, video, immagini, etc.
+              Queste risorse saranno condivse con tutti gli altri utenti in modo casuale.
+            </description>
+          </row>
+
+          <row>
+            <separator flex="1"/>
+          </row>
+
+          <row>
+            <vbox>
+              <label flex="1" />
+              <image src="chrome://pr0n/content/images/tutorial/open.png" />
+              <label flex="1" />
+            </vbox>
+
+            <description>
+              Apri un contenuto condiviso dalla community cercando per tags, video, testi o immagini.
+              Questi contenuti saranno presi random nel rispetto di cio' che stai cercando.
+            </description>
+          </row>
+
+          <row>
+            <separator flex="1"/>
+          </row>
+
+          <row>
+            <vbox>
+              <label flex="1" />
+              <image src="chrome://pr0n/content/images/tutorial/abuse.png" />
+              <label flex="1" />
+            </vbox>
+
+            <description>
+              Riporta un errore, un contenuto illegale, un contenuto non piu' disponibile.
+            </description>
+          </row>
+
+          <row>
+            <separator flex="1"/>
+          </row>
+
+          <row>
+            <vbox>
+              <label flex="1" />
+              <image src="chrome://pr0n/content/images/tutorial/exit.png" />
+              <label flex="1" />
+            </vbox>
+
+            <description>
+               Esci da pr0n ora! Questo termina il private browsing mode nascondendo pr0n e ogni contenuto.
+            </description>
+          </row>
+
+        </rows>
+     </grid>
+
+   </groupbox>
+
+  </wizardpage>
+
+  <wizardpage label="The Pr0n Tutorial" description="Follow us!">
+
+    <description>
+       Now, follow us on social networks! Send us your feedback! Share contents!
+    </description>
+
+    <separator flex="1"/>
+
+    <hbox>
+        <label flex="1" />
+        <image src="chrome://pr0n/content/images/tutorial/twitter.png" />
+        <label href="http://www.twitter.com/wepr0n" class="text-link" value="twitter.com" />
+
+        <label flex="1" />
+
+        <image src="chrome://pr0n/content/images/tutorial/facebook.png" />
+        <label href="http://www.facebook.com/pages/wepr0ncom/188870021153412" class="text-link" value="facebook.com" />
+
+        <label flex="1" />
+
+        <image src="chrome://pr0n/content/images/tutorial/github.png" />
+        <label href="http://www.github.com/wepr0n" class="text-link" value="github.com" />
+
+        <label flex="1" />
+    </hbox>
+
+    <separator flex="1"/>
+
+  </wizardpage>
+
+</wizard>

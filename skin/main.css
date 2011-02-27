@@ -109,3 +109,11 @@
 #pr0n-share-rate {
     width: 80px;
 }
+
+#Pr0n-Tutorial-Header {
+    -moz-appearance:none!important;
+    background:-moz-linear-gradient(top, #eb008a, #a1003c);
+    padding: 15px;
+    margin: 0px;
+    color:#fff;
+}

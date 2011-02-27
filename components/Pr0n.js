@@ -178,6 +178,9 @@ const Pr0n = {
         // Save if new modules
         if (newModules)
             this.save();
+
+        // Check first boot:
+        this.checkFirstBoot();
     },
 
     // GetWindows returns the list of any window in the browser:
@@ -378,6 +381,11 @@ const Pr0n = {
                     aSubject.addEventListener('load', function() {
                         new Pr0n_Window(me, aSubject, me._config);
                     }, false);
+
+                    if (this.showTutorial) {
+                        this.showTutorial = false;
+                        this.tutorial(aSubject);
+                    }
                 }
                 break;
 
@@ -388,6 +396,19 @@ const Pr0n = {
                    this.privateBrowsingExit();
                 break;
         }
+    },
+
+    checkFirstBoot: function() {
+        if (!this._preferences.getBoolPref('firstBoot'))
+            return;
+
+        this.showTutorial = true;
+
+        this._preferences.setBoolPref('firstBoot', true /* TODO */);
+    },
+
+    tutorial: function(win) {
+        win.open('chrome://pr0n/content/tutorial.xul', 'Pr0nTutorial', 'chrome,dialog,centerscreen');
     }
 };
 Pr0n.wrappedJSObject = Pr0n;

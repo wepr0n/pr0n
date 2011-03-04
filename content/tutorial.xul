@@ -16,19 +16,23 @@
   <wizardpage label="The Pr0n Tutorial" description="Introduction page">
     <hbox id="Pr0n-Tutorial-Header">
       <text value="Thanks to have chosen Pr0n!" style="font-weight: bold; font-size: x-large;" flex="1"/>
-      <image src="chrome://pr0n/content/images/logo.png" />
+      <vbox>
+        <label flex="1" />
+        <image src="chrome://pr0n/content/images/logo.png" />
+        <label flex="1" />
+      </vbox>
     </hbox>
 
     <separator flex="1"/>
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
 Pr0n is pretty easy to use, though we want you to be confident with this tool.
 So you can forget about this and dig for great porn content. 
     </description>
 
     <separator/>
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
 Just follow this easy tutorial, and it will explain all pr0n secrets to you!
     </description>
 
@@ -38,7 +42,7 @@ Just follow this easy tutorial, and it will explain all pr0n secrets to you!
 
   <wizardpage label="The Pr0n Tutorial" description="How to activate pr0n">
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
 you can activate pr0n by clicking on this icon on Mozilla Firefox toolbar, or enabling the private browsing feature of Firefox.
     </description>
 
@@ -52,7 +56,7 @@ you can activate pr0n by clicking on this icon on Mozilla Firefox toolbar, or en
 
     <separator flex="1"/>
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
 We care for your privacy, so if you don't want anybody know that you're a proud pr0n user, click here and the icon will disappear forever. You will always be able to use the shortcut to enter into pr0n's world anytime.
     </description>
 
@@ -62,7 +66,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
 
   <wizardpage label="The Pr0n Tutorial" description="How pr0n works: private mode always!">
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
         Pr0n, quando attivato attiva il private-mode del browser: niente di cio' dei siti che visiterai,
         niente della tua history, nulla sara' memorizzato. Per maggiori informazioni sul private browsing mode,
         leggi <label href="http://support.mozilla.com/en-US/kb/private browsing" class="text-link" value="qui" />.
@@ -78,7 +82,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
 
     <separator flex="1"/>
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
        Pr0n mostra la sua toolbar che da accesso a tutte le sue feature. Questa barra scompare quando si esce
        dal private browsing mode o cliccando sull'icona di pr0n, o cliccando sull'ultima icona della toolbar.
     </description>
@@ -103,7 +107,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
               <label flex="1" />
             </vbox>
 
-            <description>
+            <description class="Pr0n-Tutorial-Description">
               Cliccando su questa icona puoi condividere e taggare siti, pagine, video, immagini, etc.
               Queste risorse saranno condivse con tutti gli altri utenti in modo casuale.
             </description>
@@ -120,7 +124,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
               <label flex="1" />
             </vbox>
 
-            <description>
+            <description class="Pr0n-Tutorial-Description">
               Apri un contenuto condiviso dalla community cercando per tags, video, testi o immagini.
               Questi contenuti saranno presi random nel rispetto di cio' che stai cercando.
             </description>
@@ -137,7 +141,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
               <label flex="1" />
             </vbox>
 
-            <description>
+            <description class="Pr0n-Tutorial-Description">
               Riporta un errore, un contenuto illegale, un contenuto non piu' disponibile.
             </description>
           </row>
@@ -153,7 +157,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
               <label flex="1" />
             </vbox>
 
-            <description>
+            <description class="Pr0n-Tutorial-Description">
                Esci da pr0n ora! Questo termina il private browsing mode nascondendo pr0n e ogni contenuto.
             </description>
           </row>
@@ -167,7 +171,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
 
   <wizardpage label="The Pr0n Tutorial" description="Follow us!">
 
-    <description>
+    <description class="Pr0n-Tutorial-Description">
        Now, follow us on social networks! Send us your feedback! Share contents!
     </description>
 

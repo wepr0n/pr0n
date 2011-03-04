@@ -6,6 +6,8 @@
   title="Pr0n"
   orient="vertical"
   autostretch="always"
+  width="640px"
+  height="480px"
   onload="sizeToContent();Pr0nTutorialLoad();"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 

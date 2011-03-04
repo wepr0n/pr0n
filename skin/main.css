@@ -112,6 +112,7 @@
 
 #Pr0n-Tutorial-Header {
     -moz-appearance:none!important;
+    -moz-border-radius:10px;
     background:-moz-linear-gradient(top, #eb008a, #a1003c);
     padding: 15px;
     margin: 0px;

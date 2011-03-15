@@ -373,8 +373,8 @@ var Pr0nModule_Share = {
         vbox.appendChild(box);
 
         var label = doc.createElement('label');
-        label.setAttribute('id',    'pr0n-share-rate');
-        label.setAttribute('value', 'Rate: 0.00');
+        label.setAttribute('id',    'pr0n-share-like');
+        label.setAttribute('value', 'Like: 0');
         label.setAttribute('style', 'color: #fff');
         box.appendChild(label);
 
@@ -382,38 +382,45 @@ var Pr0nModule_Share = {
         spacer.setAttribute('flex', '1');
         vbox.appendChild(spacer);
 
-        item = doc.createElement('toolbaritem');
+        item = doc.createElement('toolbarbutton');
+        item.setAttribute('id',          'pr0n-share-like-button');
+        item.setAttribute('class',       'pr0n-button-menu');
+        item.setAttribute('image',       'chrome://pr0n/content/modules/share/images/like.png');
+        item.setAttribute('tooltiptext', 'I like this content!');
+        item.setAttribute('oncommand',   'Components.classes["@wepr0n.com/pr0n;1"]' +
+                                                   '.getService().wrappedJSObject' +
+                                                   '.module("share").like(document, window, 1);');
         items.push(item);
 
-        vbox = doc.createElement('vbox');
-        item.appendChild(vbox);
+        var vbox = doc.createElement('vbox');
+        items.push(vbox);
+
+        var spacer = doc.createElement('label');
+        spacer.setAttribute('flex', '1');
+        vbox.appendChild(spacer);
+
+        var box = doc.createElement('hbox');
+        vbox.appendChild(box);
+
+        var label = doc.createElement('label');
+        label.setAttribute('id',    'pr0n-share-dislike');
+        label.setAttribute('value', 'Dislike: 0');
+        label.setAttribute('style', 'color: #fff');
+        box.appendChild(label);
 
         spacer = doc.createElement('label');
         spacer.setAttribute('flex', '1');
         vbox.appendChild(spacer);
 
-        var ratelist = doc.createElement('hbox');
-        vbox.appendChild(ratelist);
-
-        for (var i=0; i<5; i++) {
-            var image = doc.createElement('image');
-            image.setAttribute('id', 'pr0n-share-rate-' + i);
-            image.setAttribute('src', 'chrome://pr0n/content/modules/share/images/rating_off.png');
-            image.setAttribute('onmouseover', 'Components.classes["@wepr0n.com/pr0n;1"]' +
-                                                 '.getService().wrappedJSObject' +
-                                                 '.module("share").rateOver(this, document, window);');
-            image.setAttribute('onmouseout', 'Components.classes["@wepr0n.com/pr0n;1"]' +
-                                                 '.getService().wrappedJSObject' +
-                                                 '.module("share").rateOut(this, document, window);');
-            image.setAttribute('onclick', 'Components.classes["@wepr0n.com/pr0n;1"]' +
-                                                 '.getService().wrappedJSObject' +
-                                                 '.module("share").rateClick(this, document, window);');
-            ratelist.appendChild(image);
-        }
-
-        spacer = doc.createElement('label');
-        spacer.setAttribute('flex', '1');
-        vbox.appendChild(spacer);
+        item = doc.createElement('toolbarbutton');
+        item.setAttribute('id',          'pr0n-share-dislike-button');
+        item.setAttribute('class',       'pr0n-button-menu');
+        item.setAttribute('image',       'chrome://pr0n/content/modules/share/images/dislike.png');
+        item.setAttribute('tooltiptext', 'I don\'t like this content!');
+        item.setAttribute('oncommand',   'Components.classes["@wepr0n.com/pr0n;1"]' +
+                                                   '.getService().wrappedJSObject' +
+                                                   '.module("share").like(document, window, -1);');
+        items.push(item);
 
         var sep = doc.createElement('toolbarseparator');
         items.push(sep);
@@ -813,9 +820,10 @@ var Pr0nModule_Share = {
 
         for (var i=0; i < this._windows.length; i++) {
             if (this._windows[i].win == this._currentWindow) {
-                this._windows[i].tags   = url.tags;
-                this._windows[i].rate   = url.rate;
-                this._windows[i].newUrl = url.url;
+                this._windows[i].tags    = url.tags;
+                this._windows[i].like    = url.like;
+                this._windows[i].dislike = url.dislike;
+                this._windows[i].newUrl  = url.url;
                 break;
             }
         }
@@ -1135,7 +1143,7 @@ var Pr0nModule_Share = {
         req.send(null);
     },
 
-    showInfo : function(win, tags, rate) {
+    showInfo : function(win, tags, like, dislike) {
         var w = win.contentWindow.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
            .getInterface(Components.interfaces.nsIWebNavigation)
            .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
@@ -1182,38 +1190,15 @@ var Pr0nModule_Share = {
             vbox.appendChild(spacer);
         }
 
-        this.showRate(rate, w.document, w, true);
+        this.showLike(like, dislike, w.document, w);
     },
 
-    showRate: function(rate, doc, win, toStore) {
-        var rateStr = "" + (rate ? rate : "");
-        switch (rateStr.length) {
-            case 0:  rateStr = '0.00'; break;
-            case 1:  rateStr = rateStr + '.00'; break;
-            case 2:  rateStr = rateStr + '.0'; break;
-            case 3:  rateStr = rateStr + '0'; break;
-            default: rateStr = rateStr.substring(0, 4); break;
-        }
+    showLike: function(like, dislike, doc, win) {
+        var label = doc.getElementById('pr0n-share-like');
+        label.setAttribute('value', 'Like: ' + like);
 
-        var label = doc.getElementById('pr0n-share-rate');
-
-        if (toStore == true)
-            label.setAttribute('pr0nRate', rateStr);
-
-        label.setAttribute('value', 'Rate: ' + rateStr);
-
-        var id = parseInt(rate);
-        var i=0;
-
-        for (; i<id; i++) {
-            var image = doc.getElementById('pr0n-share-rate-' + i);
-            image.setAttribute('src', 'chrome://pr0n/content/modules/share/images/rating_selected.png');
-        }
-
-        for (; i<5; i++) {
-            var image = doc.getElementById('pr0n-share-rate-' + i);
-            image.setAttribute('src', 'chrome://pr0n/content/modules/share/images/rating_off.png');
-        }
+        label = doc.getElementById('pr0n-share-dislike');
+        label.setAttribute('value', 'Dislike: ' + dislike);
     },
 
     // Window functions ------------------------------------------------------
@@ -1265,7 +1250,7 @@ var Pr0nModule_Share = {
         var me = this;
         browser.addEventListener("focus", function(evnt) { me.windowFocus(browser, evnt); }, true);
         browser.addEventListener("blur",  function(evnt) { me.windowBlur(browser, evnt); }, true);
-        this._windows.push({ win: browser, url: null, time: 0, tags: null, rate: null });
+        this._windows.push({ win: browser, url: null, time: 0, tags: null, like: 0, dislike: 0 });
     },
 
     windowFocus : function(win, evnt) {
@@ -1273,7 +1258,7 @@ var Pr0nModule_Share = {
             if (this._windows[i].win == win) {
                 this._windows[i].time = Date.now();
                 this._currentWindow = win;
-                this.showInfo(win, this._windows[i].tags, this._windows[i].rate);
+                this.showInfo(win, this._windows[i].tags, this._windows[i].like, this._windows[i].dislike);
             } else {
                 this._windows[i].time = 0;
             }
@@ -1315,10 +1300,11 @@ var Pr0nModule_Share = {
                     if (url != this._windows[i].newUrl) {
                         this._windows[i].newUrl = null;
                         this._windows[i].tags = null;
-                        this._windows[i].rate = null;
+                        this._windows[i].like = 0;
+                        this._windows[i].dislike = 0;
                     }
 
-                    this.showInfo(browser, this._windows[i].tags, this._windows[i].rate);
+                    this.showInfo(browser, this._windows[i].tags, this._windows[i].like, this._windows[i].dislike);
                 }
                 return;
             }
@@ -1365,34 +1351,14 @@ var Pr0nModule_Share = {
         }
     },
 
-    rateId : function(image) {
-        var split = image.getAttribute('id').split('-');
-        return parseInt(split[split.length - 1]);
-    },
-
-    rateOver : function(image, doc, win) {
-        var id = this.rateId(image);
-        for (var i=0 ; i<=id; i++) {
-            var image = doc.getElementById('pr0n-share-rate-' + i);
-            image.setAttribute('src', 'chrome://pr0n/content/modules/share/images/rating_highlighted.png');
-        }
-
-        var label = doc.getElementById('pr0n-share-rate');
-        label.setAttribute('value', 'Rate: ' + (id + 1) + '.00');
-    },
-
-    rateOut : function(image, doc, win) {
-        var label = doc.getElementById('pr0n-share-rate');
-        this.showRate(label.getAttribute('pr0nRate'), doc, win, false);
-    },
-
-    rateClick : function(image, doc, win) {
+    like : function(doc, win, value) {
         var me = this;
-        var id = this.rateId(image) + 1;
 
-        var label = doc.getElementById('pr0n-share-rate');
-        var rateStr = label.getAttribute('value');
-        label.setAttribute('value', 'Rating...');
+        if (value > 0) {
+            this.buttonProgress(doc.getElementById('pr0n-share-like-button'), true, null, null);
+        } else {
+            this.buttonProgress(doc.getElementById('pr0n-share-dislike-button'), true, null, null);
+        }
 
         var mainWindow = win.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                             .getInterface(Components.interfaces.nsIWebNavigation)
@@ -1403,7 +1369,7 @@ var Pr0nModule_Share = {
 
         var url = mainWindow.getBrowser().currentURI.spec;
         if (url.substring(0, 7) != 'http://') {
-            var evnt = { notify: function(timer) { me.rateOk(doc, win, rateStr); } }
+            var evnt = { notify: function(timer) { me.likeOk(doc, win, value); } }
             var timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
             timer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
             return;
@@ -1411,11 +1377,11 @@ var Pr0nModule_Share = {
 
         var req = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
                             .createInstance(Components.interfaces.nsIXMLHttpRequest);
-        req.open('POST', this.url() + '/rate', true);
+        req.open('POST', this.url() + '/like', true);
 
         req.onreadystatechange = function() {
             if (req.readyState == 4) {
-                var evnt = { notify: function(timer) { me.rateOk(doc, win, rateStr); } }
+                var evnt = { notify: function(timer) { me.likeOk(doc, win, value); } }
                 var timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
                 timer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
             }
@@ -1423,15 +1389,18 @@ var Pr0nModule_Share = {
 
         var obj = this.JSON().encode(
             { url  : url,
-              rate : id }
+              like : value }
         );
 
         req.send(obj);
     },
 
-    rateOk : function(doc, win, str) {
-        var label = doc.getElementById('pr0n-share-rate');
-        label.setAttribute('value', str);
+    likeOk : function(doc, win, value) {
+        if (value > 0) {
+            this.buttonProgress(doc.getElementById('pr0n-share-like-button'), false, null, 'chrome://pr0n/content/modules/share/images/like.png');
+        } else {
+            this.buttonProgress(doc.getElementById('pr0n-share-dislike-button'), false, null, 'chrome://pr0n/content/modules/share/images/dislike.png');
+        }
     },
 
     // Observer ------------------------------------------------------------

@@ -404,7 +404,7 @@ const Pr0n = {
 
         this.showTutorial = true;
 
-        this._preferences.setBoolPref('firstBoot', true /* TODO */);
+        this._preferences.setBoolPref('firstBoot', false);
     },
 
     tutorial: function(win) {

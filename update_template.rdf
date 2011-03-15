@@ -7,7 +7,7 @@
 
         <RDF:li>
           <RDF:Description>
-            <em:version>0.7</em:version>
+            <em:version>0.8</em:version>
 
             <em:targetApplication>
               <RDF:Description>
@@ -15,8 +15,8 @@
                 <em:minVersion>3.5</em:minVersion>
                 <em:maxVersion>4.*</em:maxVersion>
 
-                <em:updateLink>http://www.wepr0n.com/xpi/pr0n-0.7.xpi</em:updateLink>
-                <em:updateHash>sha1:5410bf7e703b52548ce493caf9328c6cbba80004</em:updateHash>
+                <em:updateLink>http://www.wepr0n.com/xpi/pr0n-0.8.xpi</em:updateLink>
+                <em:updateHash>sha1:4260706a947dbb27440459c78dd3a95d95ebb12b</em:updateHash>
 
                 <em:updateInfoURL>http://www.wepr0n.com/xpi/update.xhtml</em:updateInfoURL>
               </RDF:Description>

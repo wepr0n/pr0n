@@ -67,9 +67,9 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
   <wizardpage label="The Pr0n Tutorial" description="How pr0n works: private mode always!">
 
     <description class="Pr0n-Tutorial-Description">
-        Pr0n, quando attivato attiva il private-mode del browser: niente di cio' dei siti che visiterai,
-        niente della tua history, nulla sara' memorizzato. Per maggiori informazioni sul private browsing mode,
-        leggi <label href="http://support.mozilla.com/en-US/kb/private browsing" class="text-link" value="qui" />.
+        When you activate pr0n, it lets Firefox in private-mode: nothing of what you will browse will be tracked or stored. No traces.
+        To have more information about private browsing mode read
+        <label href="http://support.mozilla.com/en-US/kb/private browsing" class="text-link" value="here" />.
     </description>
 
     <separator flex="1"/>
@@ -83,8 +83,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
     <separator flex="1"/>
 
     <description class="Pr0n-Tutorial-Description">
-       Pr0n mostra la sua toolbar che da accesso a tutte le sue feature. Questa barra scompare quando si esce
-       dal private browsing mode o cliccando sull'icona di pr0n, o cliccando sull'ultima icona della toolbar.
+      pr0n shows its pinky toolbar that gives you access to all of its featues. This toolbar disappears when you exit private browsing mode or clicking on pr0n icon, and also clicking on the exit icon on the right.
     </description>
 
   </wizardpage>
@@ -108,8 +107,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
             </vbox>
 
             <description class="Pr0n-Tutorial-Description">
-              Cliccando su questa icona puoi condividere e taggare siti, pagine, video, immagini, etc.
-              Queste risorse saranno condivse con tutti gli altri utenti in modo casuale.
+              This is pr0n sharing feature! You can share and tag websites, pages, video, images and all the rest of porn content. These will be shared with others randomly.
             </description>
           </row>
 
@@ -125,8 +123,8 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
             </vbox>
 
             <description class="Pr0n-Tutorial-Description">
-              Apri un contenuto condiviso dalla community cercando per tags, video, testi o immagini.
-              Questi contenuti saranno presi random nel rispetto di cio' che stai cercando.
+              Enjoy a content shared by the community, searching for tags or filtering for type: video, text images.
+              pr0n will randomly choose this for you, based on your actual search.
             </description>
           </row>
 
@@ -142,7 +140,8 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
             </vbox>
 
             <description class="Pr0n-Tutorial-Description">
-              Riporta un errore, un contenuto illegale, un contenuto non piu' disponibile.
+              Well pr0n is for porn content, so this will help us monitoring non suitable contents.
+              So please use it for content that is no more available, or errors or illegal contents.
             </description>
           </row>
 
@@ -158,7 +157,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
             </vbox>
 
             <description class="Pr0n-Tutorial-Description">
-               Esci da pr0n ora! Questo termina il private browsing mode nascondendo pr0n e ogni contenuto.
+              Get off of pr0n now! This stops private browsing mode hiding pr0n and all of its nice contents!
             </description>
           </row>
 

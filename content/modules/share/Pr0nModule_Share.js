@@ -821,8 +821,8 @@ var Pr0nModule_Share = {
         for (var i=0; i < this._windows.length; i++) {
             if (this._windows[i].win == this._currentWindow) {
                 this._windows[i].tags    = url.tags;
-                this._windows[i].like    = url.like;
-                this._windows[i].dislike = url.dislike;
+                this._windows[i].like    = url.like    ? url.like    : 0;
+                this._windows[i].dislike = url.dislike ? url.dislike : 0;
                 this._windows[i].newUrl  = url.url;
                 break;
             }

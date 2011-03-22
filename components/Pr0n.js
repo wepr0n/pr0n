@@ -408,7 +408,7 @@ const Pr0n = {
     },
 
     tutorial: function(win) {
-        win.open('chrome://pr0n/content/tutorial.xul', 'Pr0nTutorial', 'chrome,dialog,centerscreen,modal');
+        win.open('chrome://pr0n/content/tutorial.xul', 'Pr0nTutorial', 'chrome,dialog,centerscreen');
     }
 };
 Pr0n.wrappedJSObject = Pr0n;

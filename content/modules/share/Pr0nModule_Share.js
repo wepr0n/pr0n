@@ -1,12 +1,16 @@
 /* See license.txt for terms of usage */
 
 var Pr0nModule_Share = {
-    _config   : null,
-    _JSON     : null,
-    _ww       : null,
-    _timer    : null,
-    _tagTimer : null,
-    _offline  : false,
+    _config     : null,
+    _JSON       : null,
+    _ww         : null,
+    _timer      : null,
+    _tagTimer   : null,
+    _abuseTimer : null,
+    _shareTimer : null,
+    _hideTimer  : null,
+    _likeTimer  : null,
+    _offline    : false,
 
     _mainTags : [ 'image', 'video', 'text' ],
 
@@ -1027,8 +1031,8 @@ var Pr0nModule_Share = {
 
     closeAbusePopup : function(doc) {
         var evnt = { notify: function(timer) {  doc.getElementById("Pr0n-Panel-Share-Abuse").hidePopup(); } }
-        var timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
-        timer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+        this._abuseTimer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
+        this._abuseTimer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
     },
 
     // Share function -------------------------------------------------------
@@ -1070,8 +1074,8 @@ var Pr0nModule_Share = {
 
     closeSharePopup : function(doc) {
         var evnt = { notify: function(timer) {  doc.getElementById("Pr0n-Panel-Share").hidePopup(); } }
-        var timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
-        timer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+        this._shareTimer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
+        this._shareTimer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
     },
 
     shareUrls : function(doc, urls) {
@@ -1342,10 +1346,10 @@ var Pr0nModule_Share = {
                         if (panel.getAttribute('pr0nToHide') == 'true')
                             panel.hidePopup(); } }
 
-                    var timer = Components.classes["@mozilla.org/timer;1"]
-                                               .createInstance(Components.interfaces.nsITimer);
-                    timer.initWithCallback(evnt, 2000 /* 2 secs */,
-                                           Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+                    this._hideTimer = Components.classes["@mozilla.org/timer;1"]
+                                                .createInstance(Components.interfaces.nsITimer);
+                    this._hideTimer.initWithCallback(evnt, 2000 /* 2 secs */,
+                                                     Components.interfaces.nsITimer.TYPE_ONE_SHOT);
                 }
             }
         }
@@ -1370,8 +1374,8 @@ var Pr0nModule_Share = {
         var url = mainWindow.getBrowser().currentURI.spec;
         if (url.substring(0, 7) != 'http://') {
             var evnt = { notify: function(timer) { me.likeOk(doc, win, value); } }
-            var timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
-            timer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+            this._likeTimer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
+            this._likeTimer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
             return;
         }
 
@@ -1382,8 +1386,8 @@ var Pr0nModule_Share = {
         req.onreadystatechange = function() {
             if (req.readyState == 4) {
                 var evnt = { notify: function(timer) { me.likeOk(doc, win, value); } }
-                var timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
-                timer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+                this._likeTimer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
+                this._likeTimer.initWithCallback(evnt, 1000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
             }
         }
 

@@ -286,9 +286,7 @@ const Pr0n = {
     },
 
     message : function(msg) {
-        // Closing all the windows except the first one:
         var windows = this.getWindows();
-        var firstWindow;
         for(var i = 0;i < windows.length; i++) {
             if ('ChromeWindow' in windows[i] &&
                 windows[i] instanceof windows[i].ChromeWindow &&
@@ -331,9 +329,9 @@ const Pr0n = {
                 nBox.removeNotification(bar);
         } }
 
-        var timer = Components.classes["@mozilla.org/timer;1"]
+        this.timer = Components.classes["@mozilla.org/timer;1"]
                                 .createInstance(Components.interfaces.nsITimer);
-        timer.initWithCallback(eventTimeout, 15000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
+        this.timer.initWithCallback(eventTimeout, 15000, Components.interfaces.nsITimer.TYPE_ONE_SHOT);
     },
 
     contribute : function(win) {

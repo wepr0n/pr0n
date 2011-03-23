@@ -46,7 +46,7 @@ function Pr0n_home() {
     } catch(e) { dump(e); }
 }
 
-function Pr0n_contribute() {
+function Pr0n_tutorial() {
     try {
         var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                          .getInterface(Components.interfaces.nsIWebNavigation)
@@ -55,7 +55,9 @@ function Pr0n_contribute() {
                          .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                          .getInterface(Components.interfaces.nsIDOMWindow);
 
-        mainWindow.getBrowser().loadURI(PR0N_CONTRIBUTE_URL);
+        var pr0n = Components.classes["@wepr0n.com/pr0n;1"]
+                             .getService().wrappedJSObject;
+        pr0n.tutorial(mainWindow);
     } catch(e) { dump(e); }
 }
 

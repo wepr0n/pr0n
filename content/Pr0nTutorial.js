@@ -3,11 +3,6 @@ function Pr0nTutorialLoad() {
                          .getService().wrappedJSObject;
 
     document.getElementById("pr0n-normal-browsing-enabled").checked = !pr0n._config.toolbarInNormalBrowsing;
-
-    var image;
-
-    image = document.getElementById('pr0n-tutorial-toolbar');
-    image.src='chrome://pr0n/content/images/tutorial/toolbar_linux.png';
 }
 
 function pr0nShownNormalBrowsingMode() {

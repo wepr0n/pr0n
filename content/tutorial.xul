@@ -50,7 +50,7 @@ you can activate pr0n by clicking on this icon on Mozilla Firefox toolbar, or en
 
     <hbox>
         <label flex="1" />
-        <image id="pr0n-tutorial-toolbar" />
+        <image src="chrome://pr0n/content/images/tutorial/toolbar.png" />
         <label flex="1" />
     </hbox>
 

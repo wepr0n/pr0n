@@ -42,9 +42,9 @@
                                image="chrome://pr0n/content/images/preferences.png"
                                oncommand="Pr0n_preferences();" />
 
-                <toolbarbutton id="Pr0n-Contribute" tooltiptext="Contribute!"
-                               image="chrome://pr0n/content/images/contribute.png"
-                               oncommand="Pr0n_contribute();" />
+                <toolbarbutton id="Pr0n-Contribute" tooltiptext="Open the tutorial"
+                               image="chrome://pr0n/content/images/tutorial.png"
+                               oncommand="Pr0n_tutorial();" />
 
                 <toolbarseparator />
 

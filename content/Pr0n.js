@@ -2,7 +2,8 @@
 
 // CONSTANTS //
 const PR0N_HOME_URL       = 'http://www.wepr0n.com';
-const PR0N_CONTRIBUTE_URL = 'http://www.wepr0n.com'; // TODO
+const PR0N_CHROME_URL     = 'chrome://pr0n/content/home/index.html';
+const PR0N_CONTRIBUTE_URL = 'http://www.wepr0n.com';
 const PR0N_COPYRIGHT      = 'Copyright (c) 2010, pr0n project; All rights reserved.';
 
 // HELPERS //
@@ -42,7 +43,7 @@ function Pr0n_home() {
                          .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
                          .getInterface(Components.interfaces.nsIDOMWindow);
 
-        mainWindow.getBrowser().loadURI(PR0N_HOME_URL);
+        mainWindow.getBrowser().loadURI(PR0N_CHROME_URL);
     } catch(e) { dump(e); }
 }
 

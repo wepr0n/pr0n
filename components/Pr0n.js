@@ -138,12 +138,12 @@ const Pr0n = {
                 if(this.moduleValidation(modules[i].name,
                                          modules[i].obj) == true)
                     this._modules.push(modules[i]);
-                else
-                    continue;
             } catch(e) {
                 dump(e + '\n');
-                continue;
             }
+
+            if (this._modules[i] == null)
+                continue;
 
             this._modules[i].enabled = false;
 

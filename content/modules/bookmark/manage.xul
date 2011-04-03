@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://pr0n/skin/main.css" type="text/css"?>
+
+<dialog
+  title="Pr0n Bookmarks"
+  orient="vertical"
+  autostretch="always"
+  width="600px"
+  height="600px"
+  buttons="accept" flex="1"
+  onload="Pr0nBookmarksLoad();"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="chrome://pr0n/content/modules/bookmark/manage.js" />
+
+  <popupset>
+     <popup id="Pr0n-Bookmarks-menu" class="pr0n-panel">
+        <menuitem label="Open"   oncommand="Pr0nBookmarksOpen()" />
+        <menuitem label="Delete" oncommand="Pr0nBookmarksDelete()" />
+     </popup>
+  </popupset>
+
+    <vbox flex="1">
+      <hbox id="Pr0n-Tutorial-Header">
+        <text value="Manage your pr0n bookmarks" style="font-weight: bold; font-size: x-large;" flex="1"/>
+        <vbox>
+          <label flex="1" />
+          <image src="chrome://pr0n/content/images/logo.png" />
+          <label flex="1" />
+        </vbox>
+      </hbox>
+
+      <separator/>
+
+      <tree flex="1" style="height: 20em;" seltype="single" id="Pr0n-Bookmarks-list" context="Pr0n-Bookmarks-menu">
+        <keyset>
+          <key keycode="VK_DELETE" oncommand="Pr0nBookmarksDelete()" />
+        </keyset>
+
+        <treecols>
+          <treecol label="Title" flex="2" primary="true" persist="width" />
+          <splitter class="tree-splitter"/>
+          <treecol label="Location" flex="1" persist="width" />
+        </treecols>
+
+        <treechildren id="Pr0n-bookmarks-list-children"/>
+      </tree>
+    </vbox>
+
+</dialog>

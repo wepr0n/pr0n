@@ -40,8 +40,9 @@ Pr0n_Window.prototype = {
         this.checkToolbar();
 
         // Loading of the window:
-        win.addEventListener('load', function() { me.windowOnload(); }, false);
         this._window._Pr0nWindow = this;
+        win.addEventListener('load', function() { me.windowOnload(); }, false);
+        try { this.windowOnload(); } catch(e) {}
     },
 
     refresh : function() {
@@ -98,6 +99,23 @@ Pr0n_Window.prototype = {
         this._window._Pr0nWindow = this;
         this.initToolbar();
         this.checkToolbar();
+
+        var me = this;
+        var win = this._window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+           .getInterface(Components.interfaces.nsIWebNavigation)
+           .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+           .rootTreeItem
+           .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+           .getInterface(Components.interfaces.nsIDOMWindow);
+
+        win.addEventListener("DOMContentLoaded", function(evnt) { me.windowDOMContentLoaded(evnt); }, true);
+    },
+
+    windowDOMContentLoaded : function(evnt) {
+        var doc = evnt.originalTarget;
+        if (doc.location.href == 'about:privatebrowsing') {
+            doc.location.href = 'chrome://pr0n/content/home/index.html';
+        }
     },
 
     initToolbar : function() {

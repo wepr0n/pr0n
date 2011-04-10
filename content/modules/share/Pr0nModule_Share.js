@@ -1355,7 +1355,14 @@ var Pr0nModule_Share = {
         }
     },
 
+    like_running : false,
+
     like : function(doc, win, value) {
+        if (this.like_running)
+            return;
+
+        this.like_running = true;
+
         var me = this;
 
         if (value > 0) {
@@ -1400,10 +1407,24 @@ var Pr0nModule_Share = {
     },
 
     likeOk : function(doc, win, value) {
+        this.like_running = false;
+
         if (value > 0) {
             this.buttonProgress(doc.getElementById('pr0n-share-like-button'), false, null, 'chrome://pr0n/content/modules/share/images/like.png');
         } else {
             this.buttonProgress(doc.getElementById('pr0n-share-dislike-button'), false, null, 'chrome://pr0n/content/modules/share/images/dislike.png');
+        }
+
+        for (var i=0; i < this._windows.length; i++) {
+            if (this._windows[i].win == this._currentWindow) {
+                if (value > 0)
+                    this._windows[i].like++;
+                else
+                    this._windows[i].dislike++;
+
+                this.showLike(this._windows[i].like, this._windows[i].dislike, doc, win);
+                break;
+            }
         }
     },
 

@@ -41,17 +41,26 @@
     padding:10px;
     border-top:1px solid #666;
     border-bottom:1px solid #fff;
-    background:0;
     color:#fff;
     margin:5px 0 0 -5px;
     border:1px solid #fff;
     background: #a1003c;
 }
 
-
 .pr0n-panel-title {
     -moz-appearance:none!important;
     font-size:18px;
+}
+
+.pr0n-menu-item {
+    -moz-appearance:none!important;
+    color: #fff;
+}
+
+.pr0n-menu-item:hover {
+    -moz-appearance:none!important;
+    background: #a1003c;
+    color:#000;
 }
 
 .pr0n-label {

@@ -33,7 +33,7 @@ var Pr0nModule_Bookmark = {
 
         var menuitem;
         menuitem = doc.createElement('menuitem');
-        menuitem.setAttribute('class',     'pr0n-panel-title');
+        menuitem.setAttribute('class',     'pr0n-panel-title pr0n-menu-item');
         menuitem.setAttribute('label',     'Bookmark this page');
         menuitem.setAttribute('oncommand', 'Components.classes["@wepr0n.com/pr0n;1"]' +
                                                      '.getService().wrappedJSObject' +
@@ -44,6 +44,7 @@ var Pr0nModule_Bookmark = {
 
         menuitem = doc.createElement('menuitem');
         menuitem.setAttribute('label',     'Manage your bookmark');
+        menuitem.setAttribute('class',     'pr0n-menu-item');
         menuitem.setAttribute('oncommand', 'Components.classes["@wepr0n.com/pr0n;1"]' +
                                                      '.getService().wrappedJSObject' +
                                                      '.module("bookmark").manage(document, window);');
@@ -284,10 +285,11 @@ var Pr0nModule_Bookmark = {
             item.setAttribute('label', bookmarks[i].title ?
                                        bookmarks[i].title : bookmarks[i].url);
             item.setAttribute('pr0nUrl', bookmarks[i].url);
+            item.setAttribute('class',        'pr0n-menu-item');
             item.setAttribute('pr0nbookmark', 'true');
-            item.setAttribute('oncommand', 'Components.classes["@wepr0n.com/pr0n;1"]' +
-                                                     '.getService().wrappedJSObject' +
-                                                     '.module("bookmark").openPage(document, window, this);');
+            item.setAttribute('oncommand',    'Components.classes["@wepr0n.com/pr0n;1"]' +
+                                                        '.getService().wrappedJSObject' +
+                                                        '.module("bookmark").openPage(document, window, this);');
 
             menu.appendChild(item);
         }

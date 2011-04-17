@@ -115,6 +115,9 @@ Pr0n_Window.prototype = {
         var doc = evnt.originalTarget;
         if (doc.location.href == 'about:privatebrowsing') {
             doc.location.href = 'chrome://pr0n/content/home/index.html';
+        } else if (doc.location.href == 'chrome://pr0n/content/home/index.html') {
+            var urlbar = this._window.document.getElementById("urlbar");
+            urlbar.value = '';
         }
     },
 

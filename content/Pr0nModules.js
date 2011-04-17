@@ -1,16 +1,16 @@
 /* See license.txt for terms of usage */
 
 var Pr0n_Modules = [
-     { name        : 'share',
-       icon        : 'chrome://pr0n/content/modules/share/images/icon.png',
-       includes    : [ "chrome://pr0n/content/modules/share/Pr0nModule_Share.js" ],
-       description : 'Share contents with the community!',
-       className   : 'Pr0nModule_Share' },
      { name        : 'bookmark',
        icon        : 'chrome://pr0n/content/modules/bookmark/images/icon.png',
        includes    : [ "chrome://pr0n/content/modules/bookmark/Pr0nModule_Bookmark.js" ],
        description : 'Your personal bookmarks',
        className   : 'Pr0nModule_Bookmark' },
+     { name        : 'share',
+       icon        : 'chrome://pr0n/content/modules/share/images/icon.png',
+       includes    : [ "chrome://pr0n/content/modules/share/Pr0nModule_Share.js" ],
+       description : 'Share contents with the community!',
+       className   : 'Pr0nModule_Share' },
      { name        : 'twitter',
        icon        : 'chrome://pr0n/content/modules/twitter/images/icon.png',
        includes    : [ "chrome://pr0n/content/modules/twitter/Pr0nModule_Twitter.js" ],

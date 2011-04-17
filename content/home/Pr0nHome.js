@@ -11,11 +11,17 @@ load : function() {
 showRecent : function(bookmarks) {
     var img = document.getElementById('images');
 
+    var div = null
     for(var i=0; i<bookmarks.length; i++) {
+        if (div == null || !(i % 4)) {
+            div = document.createElement('div');
+            img.appendChild(div)
+        }
+
         var a = document.createElement('a');
         a.setAttribute('title', bookmarks[i].title);
         a.setAttribute('href',  bookmarks[i].url);
-        img.appendChild(a);
+        div.appendChild(a);
 
         var aa = document.createElement('img');
         aa.setAttribute('class', 'Pr0nImage');

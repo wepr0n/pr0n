@@ -5,6 +5,9 @@
 <title>pr0n - the firefox addon for porn!</title>
 <link href="css/style.css" rel="stylesheet" media="screen">
 <script src="Pr0nHome.js"></script>
+
+<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+
 </head>
 
 <body onload="Pr0nHome.load()">
@@ -12,8 +15,21 @@
 <div style="text-align:center; margin-top: 20em;">
     <img src="images/logo.png" alt="pr0n | download the sharing experience" /><br /><br />
 
-    <div id="images" />
+<a class="prev browse left"></a>
+
+    <div class="scrollable">
+        <div class="items" id="images" />
+    </div>
+
+<a class="next browse right"></a>
+
 </div>
+
+<script>
+$(function() {
+    $(".scrollable").scrollable();
+});
+</script>
 
 </body>
 </html>

@@ -3,6 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>pr0n - the firefox addon for porn!</title>
+<link href="framework/reset.css" rel="stylesheet" media="screen">
+<link href="framework/960.css" rel="stylesheet" media="screen">
+<link href="framework/text.css" rel="stylesheet" media="screen">
 <link href="css/style.css" rel="stylesheet" media="screen">
 <script src="Pr0nHome.js"></script>
 
@@ -12,22 +15,29 @@
 
 <body onload="Pr0nHome.load()">
 
-<div style="text-align:center; margin-top: 20em;">
-    <img src="images/logo.png" alt="pr0n | download the sharing experience" /><br /><br />
-
-<a class="prev browse left"></a>
-
-    <div class="scrollable">
-        <div class="items" id="images" />
+<div class="container-12">
+  <div class="grid-12">
+    <h1 id="logo"><img src="images/logo.png" alt="pr0n | download the sharing experience" /></h1>
+    <h2 id="bookmarks_title">recent bookmarks</h2>
+    <div class="grid-10 prefix-1" id="bookmarks">
+      <div class="grid-1 alpha">
+        <a class="prev browse left"></a>
+      </div>
+      <div class="scrollable grid-8">
+          <div class="items" id="images" />
+      </div>
     </div>
-
-<a class="next browse right"></a>
-
+    <div class="grid-1 omega">
+        <a class="next browse right"></a>
+    </div>
+    <div class="navi"></div>
+  </div>
 </div>
+
 
 <script>
 $(function() {
-    $(".scrollable").scrollable();
+    $(".scrollable").scrollable().navigator();
 });
 </script>
 

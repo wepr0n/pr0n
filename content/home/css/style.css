@@ -1,15 +1,78 @@
 body {
-    font-family:"Lucida Grande",Arial,Helvetica,sans-serif;
-    font-size:13px;
-    line-height:20px;
-    color:#444;
-    margin:20px auto;
-    background: #dbdbdb;
+  font-family:"Lucida Grande",Arial,Helvetica,sans-serif;
+  font-size:13px;
+  line-height:20px;
+  color:#444;
+  margin:20px auto;
+  background: #dbdbdb;
 }
 
-.Pr0nImage {
-    width: 200px;
-    height: 200px;
-    margin: 1em;
-    border: 1px solid black;
+#logo {
+  text-align: center;
+}
+
+#bookmarks_title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #dd047a;
+  margin:20px 0;
+}
+#bookmarks {
+  margin:20px 0;
+}
+
+.scrollable {
+  position:relative;
+  overflow:hidden;
+  height:140px;
+  width:620px;
+}
+
+.scrollable .items {
+  /* this cannot be too large */
+  width:20000em;
+  position:absolute;
+}
+
+.items div {
+  float:left;
+  margin-right:20px;
+  height: 140px;
+}
+
+.items div img {
+  width:134px;
+  height: 134px;
+  margin-right:20px;
+  border:3px solid #fff;
+}
+
+.items div img:hover {
+  border:3px solid #dd047a;
+}
+
+#bookmarks a.browse {
+  background: url(../images/arrow.png) no-repeat;
+  width:20px;
+  height: 20px;
+  display: block;
+  float:left;
+  margin-top:60px;
+  cursor: pointer;
+}
+
+#bookmarks a.left {
+  background-position: 0 -60px;
+}
+
+#bookmarks a.right {
+  background-position: 0px -20px;
+}
+
+#bookmarks a.left:hover {
+  background-position: 0 -40px;
+}
+
+#bookmarks a.right:hover {
+  background-position: 0px 0px;
 }

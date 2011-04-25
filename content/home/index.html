@@ -7,10 +7,14 @@
 <link href="framework/960.css" rel="stylesheet" media="screen">
 <link href="framework/text.css" rel="stylesheet" media="screen">
 <link href="css/style.css" rel="stylesheet" media="screen">
-<script src="Pr0nHome.js"></script>
-
-<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
-
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/Pr0nHome.js"></script>
+<script type="text/javascript">
+$(function() {
+    $(".scrollable").scrollable();
+});
+</script>
 </head>
 
 <body onload="Pr0nHome.load()">
@@ -30,16 +34,9 @@
     <div class="grid-1 omega">
         <a class="next browse right"></a>
     </div>
-    <div class="navi"></div>
   </div>
 </div>
 
-
-<script>
-$(function() {
-    $(".scrollable").scrollable().navigator();
-});
-</script>
 
 </body>
 </html>

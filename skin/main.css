@@ -38,13 +38,12 @@
 
 .pr0n-panel {
     -moz-appearance:none!important;
-    padding:10px;
-    border-top:1px solid #666;
-    border-bottom:1px solid #fff;
+    -moz-border-radius: 5px;
+    padding:20px;
     color:#fff;
     margin:5px 0 0 -5px;
-    border:1px solid #fff;
-    background: #a1003c;
+    border:1px solid #999999;
+    background:-moz-linear-gradient(top, #666666, #111111);
 }
 
 .pr0n-panel-title {
@@ -76,7 +75,7 @@
     -moz-appearance:none!important;
     -moz-border-radius:5px;
     border:1px solid #999;
-    background:0;
+    background:-moz-linear-gradient(top, #666666, #111111);
     color:#fff;
     padding:5px;
 }
@@ -84,7 +83,6 @@
 .pr0n-button:hover {
     -moz-border-radius:5px;
     border:1px solid #999;
-    background:0;
     color:#fff;
     padding:5px;
 }
@@ -105,8 +103,8 @@
 
 .pr0n-input-text {
     -moz-appearance:none!important;
-    border:1px solid #eb008a;
-    color:#9f003a;
+    border:1px solid #999999;
+    color:#333333;
     padding:2px;
 }
 

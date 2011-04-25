@@ -48,7 +48,7 @@
 
                 <toolbarseparator />
 
-                <toolbarbutton id="Pr0n-Exit" tooltiptext="Exit NOW!"
+                <toolbarbutton id="Pr0n-Exit" tooltiptext="Exit NOW!" acceeskey="Q"
                                image="chrome://pr0n/content/images/exit.png"
                                oncommand="Pr0n_exit();" />
             </toolbaritem>

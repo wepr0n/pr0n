@@ -184,7 +184,7 @@ We care for your privacy, so if you don't want anybody know that you're a proud 
         <label flex="1" />
 
         <image src="chrome://pr0n/content/images/tutorial/facebook.png" />
-        <label href="http://www.facebook.com/pages/wepr0ncom/188870021153412" class="text-link" value="facebook.com" />
+        <label href="http://www.facebook.com/wepr0n" class="text-link" value="facebook.com" />
 
         <label flex="1" />
 
